@@ -1,34 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Planner</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Student Planner</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Planner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Student Lifecycle</p>
+          <h1>Student Planner</h1>
+        </div>
+        <div id="current-date-label" class="date-chip"></div>
+      </header>
 
-  <main>
-    <section>
-      <h2>Add Event</h2>
-      <form id="event-form">
-        <input type="text" id="title" placeholder="Event title" />
-        <input type="text" id="day" placeholder="Day (Monday)" />
-        <input type="time" id="startTime" />
-        <input type="time" id="endTime" />
-        <button type="submit">Add</button>
-      </form>
-    </section>
+      <nav class="tab-bar" aria-label="Planner tabs">
+        <button class="tab-button active" data-tab="calendar">Calendar</button>
+        <button class="tab-button" data-tab="weekly">Weekly Schedule</button>
+        <button class="tab-button" data-tab="todo">To-Do</button>
+      </nav>
 
-    <section>
-      <h2>Weekly Schedule</h2>
-      <div id="calendar"></div>
-    </section>
-  </main>
+      <main class="main-content">
+        <section id="calendar-panel" class="panel active">
+          <div class="calendar-toolbar">
+            <button id="prev-period" class="nav-button" type="button">Previous</button>
 
-  <script src="script.js"></script>
-</body>
+            <div class="period-display">
+              <div id="period-label" class="period-label"></div>
+              <div class="period-pickers">
+                <select id="month-select" aria-label="Select month"></select>
+                <select id="year-select" aria-label="Select year"></select>
+              </div>
+            </div>
+
+            <div class="view-controls" aria-label="Calendar zoom level">
+              <button class="view-button active" data-view="month" type="button">Month</button>
+              <button class="view-button" data-view="week" type="button">Week</button>
+              <button class="view-button" data-view="day" type="button">Day</button>
+            </div>
+
+            <button id="next-period" class="nav-button" type="button">Next</button>
+          </div>
+
+          <div id="month-calendar" class="calendar-view"></div>
+          <div id="week-calendar" class="calendar-view hidden"></div>
+          <div id="day-calendar" class="calendar-view hidden"></div>
+
+          <aside class="event-panel">
+            <h2 id="event-form-title">Add Event</h2>
+            <form id="event-form">
+              <div class="field-group">
+                <label for="event-title">Title</label>
+                <input id="event-title" type="text" placeholder="Event title" />
+              </div>
+
+              <div class="field-group">
+                <label for="event-category">Category</label>
+                <select id="event-category"></select>
+              </div>
+
+              <div class="field-group">
+                <label for="custom-category">Custom category</label>
+                <input id="custom-category" type="text" placeholder="Create your own category" />
+              </div>
+
+              <div class="field-group">
+                <label for="event-color">Color</label>
+                <input id="event-color" type="color" value="#3b82f6" />
+              </div>
+
+              <div class="field-group">
+                <label for="event-date">Day</label>
+                <input id="event-date" type="date" />
+              </div>
+
+              <div class="time-row">
+                <div class="field-group">
+                  <label for="event-start">Start</label>
+                  <input id="event-start" type="time" />
+                </div>
+
+                <div class="field-group">
+                  <label for="event-end">End</label>
+                  <input id="event-end" type="time" />
+                </div>
+              </div>
+
+              <div class="button-row">
+                <button type="submit" class="primary-button">Add Event</button>
+                <button type="button" id="cancel-edit" class="secondary-button hidden">Cancel Edit</button>
+              </div>
+            </form>
+          </aside>
+        </section>
+
+        <section id="weekly-panel" class="panel hidden">
+          <div class="weekly-toolbar">
+            <label class="week-picker">
+              <span>Week of</span>
+              <input id="week-picker" type="date" />
+            </label>
+
+            <div class="time-range-controls">
+              <label class="time-range-field">
+                <span>Start</span>
+                <select id="weekly-start-hour"></select>
+              </label>
+              <label class="time-range-field">
+                <span>End</span>
+                <select id="weekly-end-hour"></select>
+              </label>
+            </div>
+
+            <div id="category-filters" class="category-filters" aria-label="Event categories"></div>
+          </div>
+
+          <div id="weekly-summary" class="weekly-summary"></div>
+          <div id="weekly-schedule" class="weekly-schedule"></div>
+        </section>
+
+        <section id="todo-panel" class="panel hidden">
+          <div class="todo-header">
+            <div class="todo-controls">
+              <label class="todo-field">
+                <span>Display</span>
+                <select id="todo-view-select">
+                  <option value="day">Day</option>
+                  <option value="week">Week</option>
+                </select>
+              </label>
+
+              <label class="todo-field">
+                <span>For date</span>
+                <input id="todo-date-picker" type="date" />
+              </label>
+
+              <label class="todo-field">
+                <span>Show</span>
+                <select id="todo-kind-select">
+                  <option value="all">All</option>
+                  <option value="tasks">Tasks</option>
+                  <option value="assignments">Assignments</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="todo-subtabs">
+              <button type="button" class="todo-subtab active" data-todo-tab="active">Active</button>
+              <button type="button" class="todo-subtab" data-todo-tab="completed">Completed</button>
+            </div>
+          </div>
+
+          <div class="todo-form-panel">
+            <h2 id="todo-form-title">Add To-Do</h2>
+            <form id="todo-form" class="todo-form">
+              <input id="todo-title" type="text" placeholder="What do you need to do?" />
+              <select id="todo-type" aria-label="Task type">
+                <option value="task">Task</option>
+                <option value="assignment">Assignment</option>
+              </select>
+              <div id="todo-date-field">
+                <input id="todo-date" type="date" />
+              </div>
+              <div id="assignment-fields" class="assignment-fields hidden">
+                <label>
+                  <span>Due date</span>
+                  <input id="todo-due-date" type="date" />
+                </label>
+                <label>
+                  <span>Due time</span>
+                  <input id="todo-due-time" type="time" />
+                </label>
+                <label>
+                  <span>Reminder (days before)</span>
+                  <input id="todo-reminder-days" type="number" min="0" max="30" step="1" value="3" />
+                </label>
+              </div>
+              <button type="submit" class="primary-button">Add Item</button>
+              <button type="button" id="todo-cancel-edit" class="secondary-button hidden">Cancel</button>
+            </form>
+          </div>
+
+          <div id="todo-active-panel" class="todo-panel-content">
+            <h3 id="todo-list-heading" class="todo-list-heading">Tasks for Selected Day</h3>
+            <div id="todo-list" class="todo-list"></div>
+          </div>
+
+          <div id="todo-completed-panel" class="todo-panel-content hidden">
+            <h3 class="todo-list-heading">Completed Items</h3>
+            <div id="completed-todo-list" class="todo-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
