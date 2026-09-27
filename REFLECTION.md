@@ -45,3 +45,40 @@ I would also be more intentional about documentation from the beginning, because
 This project taught me that Copilot can be a very effective development partner when used strategically, but it also showed me how powerful and surprising AI-assisted coding can feel when it begins testing and running the app in the browser in real time. Watching it work through the project, refresh the page, and check functionality made me realize how much the development process can change when the tool is not just suggesting code but actively helping verify it.
 
 I also learned that HTML, CSS, and JavaScript do not work independently — they come together to build the full experience of an app. HTML creates the structure, CSS shapes the design, and JavaScript adds the interactivity and logic that make the planner functional. Overall, this project showed me how much can be learned by building something real, testing it in the browser, and refining it through feedback and iteration.
+
+## Photo Documentation
+
+![Progress photo 2026-09-26 194049](images/Screenshot%202026-09-26%20194049.png)
+
+![Progress photo 2026-09-26 194224](images/Screenshot%202026-09-26%20194224.png)
+
+![Progress photo 2026-09-26 194514](images/Screenshot%202026-09-26%20194514.png)
+
+![Progress photo 2026-09-26 194638](images/Screenshot%202026-09-26%20194638.png)
+
+![Progress photo 2026-09-26 195502](images/Screenshot%202026-09-26%20195502.png)
+
+![Progress photo 2026-09-26 195952](images/Screenshot%202026-09-26%20195952.png)
+
+![Progress photo 2026-09-26 204706](images/Screenshot%202026-09-26%20204706.png)
+
+![Progress photo 2026-09-26 205908](images/Screenshot%202026-09-26%20205908.png)
+
+![Progress photo 2026-09-26 210326](images/Screenshot%202026-09-26%20210326.png)
+
+![Progress photo 2026-09-26 213821](images/Screenshot%202026-09-26%20213821.png)
+
+![Progress photo 2026-09-26 214147](images/Screenshot%202026-09-26%20214147.png)
+
+![Progress photo 2026-09-26 214942](images/Screenshot%202026-09-26%20214942.png)
+
+![Progress photo 2026-09-26 220101](images/Screenshot%202026-09-26%20220101.png)
+
+![Progress photo 2026-09-26 220900](images/Screenshot%202026-09-26%20220900.png)
+
+![Progress photo 2026-09-26 221209](images/Screenshot%202026-09-26%20221209.png)
+
+![Progress photo 2026-09-26 225546](images/Screenshot%202026-09-26%20225546.png)
+
+![Progress photo 2026-09-26 230304](images/Screenshot%202026-09-26%20230304.png)
+
