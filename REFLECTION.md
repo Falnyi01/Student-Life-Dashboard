@@ -4,7 +4,7 @@
 
 I asked Copilot to help me build a student planner that combined three core features in one place: a calendar, a weekly schedule, and a to-do list. The main goal was to create an app that could help manage academic life in a single dashboard without needing a separate app for each feature.
 
-I starte by describing what I wanted to Coilot so it would have a direction of how to code when I gave it other prompts. I broke the work down into smaller parts so it felt manageable and easier to test. First, I focused on the calendar and event creation flow. Then I moved to the weekly schedule and the time-grid view. After that, I added the to-do system and assignment reminders. Lasty, I went back and refined the weekly summary so it could calculate how much time was spent on events and how much free time users had.
+I started by describing what I wanted to Coilot so it would have a direction of how to code when I gave it other prompts. I broke the work down into smaller parts so it felt manageable and easier to test. First, I focused on the calendar and event creation flow. Then I moved to the weekly schedule and the time-grid view. After that, I added the to-do system and assignment reminders. Lasty, I went back and refined the weekly summary so it could calculate how much time was spent on events and how much free time users had.
 
 This step-by-step approach made it easier to ask for help on each feature and help me keep organized.
 
