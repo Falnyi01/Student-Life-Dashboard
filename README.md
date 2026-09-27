@@ -96,7 +96,12 @@ No installation, package manager, or backend setup is required because this is a
 
 The Student Life Dashboard is a practical, student-focused planning tool that combines scheduling, time management, and task tracking into one simple web app. It is easy to run, visually organized, and built to help students manage their responsibilities efficiently.
 
-![Calendar tab showing month](images/Screenshot 2026-09-26 231141.png)
-![Weekly schedule tab](images/Screenshot 2026-09-26 231201.png)
-![To-do list tab active items](images/Screenshot 2026-09-26 231332.png)
-![To do list tab completed items](images/Screenshot 2026-09-26 231346.png)
+## Screenshots
+
+![Calendar tab showing month](images/Screenshot%202026-09-26%20231141.png)
+
+![Weekly schedule tab](images/Screenshot%202026-09-26%20231201.png)
+
+![To-do list tab active items](images/Screenshot%202026-09-26%20231332.png)
+
+![To-do list tab completed items](images/Screenshot%202026-09-26%20231346.png)
